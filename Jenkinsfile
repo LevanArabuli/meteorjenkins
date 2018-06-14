@@ -5,13 +5,16 @@ pipeline {
         }
     }
     stages {
-        stage('Prepare'){
+        stage('Setup'){
             steps {
                 sh 'pwd'
                 sh 'ls'
-                dir './client'
-                sh 'ls'
-                sh 'pwd'
+                dir ''
+                dir("./client"){
+                  sh 'ls'
+                  sh 'pwd'
+                }
+
                 sh 'da'
                 sh 'apt-get update && apt-get -y install curl'
                 sh 'apt-get -y install nodejs'
