@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'meteor test --once --driver-package meteortesting:mocha'
+                sh 'meteor test --allow-superuser --once --driver-package meteortesting:mocha'
             }
         }
         stage('Deploy') {
