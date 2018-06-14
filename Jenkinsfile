@@ -9,7 +9,7 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls'
-                sh 'cd ./client'
+                dir 'client'
                 sh 'ls'
                 sh 'pwd'
                 sh 'da'
