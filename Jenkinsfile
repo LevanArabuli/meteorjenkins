@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Prepare'){
             steps {
-                sh 'yum install curl'
+                sh 'yarn --version'
+                sh 'yarn install curl'
                 sh 'curl https://install.meteor.com/ | sh'
             }
         }
