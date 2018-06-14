@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Prepare'){
             steps {
-                sh 'apt-get install curl'
+                sh 'yum install curl'
                 sh 'curl https://install.meteor.com/ | sh'
             }
         }
