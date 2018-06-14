@@ -9,7 +9,7 @@ pipeline {
         stage('Prepare'){
             steps {
                 sh 'yarn --version'
-                sh 'yarn install curl'
+                sh 'yarn add curl'
                 sh 'curl https://install.meteor.com/ | sh'
             }
         }
