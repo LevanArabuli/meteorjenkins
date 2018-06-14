@@ -7,13 +7,6 @@ pipeline {
     stages {
         stage('Setup'){
             steps {
-                sh 'pwd'
-                sh 'ls'
-                dir('client'){
-                  sh 'ls'
-                  sh 'pwd'
-                }
-                sh 'da'
                 sh 'apt-get update && apt-get -y install curl'
                 sh 'apt-get -y install nodejs'
                 sh 'apt-get -y install npm'
@@ -36,9 +29,10 @@ pipeline {
                 branch 'master'
             }
             steps {
-                sh 'npm install --global mup'
-                sh 'cd ./deploy/staging'
-                sh 'mup deploy'
+                dir ('cd ./deploy/staging'){
+                  sh 'npm install mup'
+                  sh 'mup deploy'
+                }
             }
         }
     }
