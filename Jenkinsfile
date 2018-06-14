@@ -9,12 +9,10 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls'
-                dir ''
-                dir("client"){
+                dir('client'){
                   sh 'ls'
                   sh 'pwd'
                 }
-
                 sh 'da'
                 sh 'apt-get update && apt-get -y install curl'
                 sh 'apt-get -y install nodejs'
