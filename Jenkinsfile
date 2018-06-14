@@ -8,6 +8,7 @@ pipeline {
         stage('Prepare'){
             steps {
                 sh 'apt-get update && apt-get -y install curl'
+                sh 'apt-get install -y bsdtar && ln -sf $(which bsdtar) $(which tar)'
                 sh 'curl https://install.meteor.com/ | sh'
             }
         }
