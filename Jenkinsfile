@@ -1,15 +1,13 @@
 pipeline {
     agent {
         docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
+            image 'ubuntu'
         }
     }
     stages {
         stage('Prepare'){
             steps {
-                sh 'yarn --version'
-                sh 'yarn add curl'
+                sh 'apt-get update && apt-get -y install curl'
                 sh 'curl https://install.meteor.com/ | sh'
             }
         }
