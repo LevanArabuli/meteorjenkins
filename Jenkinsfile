@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'npm install'
+                sh 'meteor npm install'
             }
         }
         stage('Test') {
@@ -27,6 +27,8 @@ pipeline {
             }
             steps {
                 sh 'npm install --global mup'
+                sh 'cd ./deploy/staging'
+                sh 'mup deploy'
             }
         }
     }
