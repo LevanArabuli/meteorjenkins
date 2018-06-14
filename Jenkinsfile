@@ -10,7 +10,7 @@ pipeline {
                 sh 'pwd'
                 sh 'ls'
                 dir ''
-                dir("./client"){
+                dir("client"){
                   sh 'ls'
                   sh 'pwd'
                 }
