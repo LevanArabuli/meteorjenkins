@@ -9,7 +9,10 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls'
-                sh 'cd ./deploy/staging'
+                sh 'cd ./client'
+                sh 'ls'
+                sh 'pwd'
+                sh 'da'
                 sh 'apt-get update && apt-get -y install curl'
                 sh 'apt-get -y install nodejs'
                 sh 'apt-get -y install npm'
